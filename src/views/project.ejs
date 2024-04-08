@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>O'Vitrine | Project</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+        integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/article.css">
+
+    <meta name="generator" content="Ghost 0.3" />
+</head>
+
+<body class="home-template">
+
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo" style="margin-bottom: 0;background-image: url('https://picsum.photos/800');">
+                <h1>
+                    <a href="#">Project: <%=project.full_name%></a>
+                </h1>
+
+                <div class="blog-description">
+                    <div class="through-line">by <%=owner.login%></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="articles">
+
+            <article class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><%=project.full_name%></h2>
+                    <span>Started On: <time><%=project.created_at%></time></span><br>
+                    <span>Last Update: <time><%=project.updated_at%></time></span>
+                </header>
+
+                <section class="post-excerpt">
+                    <p><%=project.description%></p>
+                </section>
+
+
+                <section class="post-excerpt">
+                    <p><i>This article was provided to you by: <%=owner.login%> (<%=owner.type%>) that you may reach at <%=owner.html_url%></i></p>
+                </section>
+            </article>
+
+            <nav class="pagination" role="pagination">
+                <a class="older-posts" href="/">&rarr; Back to home &larr;</a>
+            </nav>
+
+        </section>
+
+
+    </div>
+
+</body>
+
+</html>

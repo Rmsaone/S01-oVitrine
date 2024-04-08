@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- langage set to English -->
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- a viewport declaraction which does not disable zooming -->
+    <meta name="viewport" content="width=device.width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- google font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,800" type="text/css">
+    <!-- awesome icon font -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
+
+    <!-- a non-blocking stylesheet -->
+    <link rel="stylesheet" href="/css/main.css" type="text/css" media="none" onload="if(media!='all')media='all'">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+
+    <!-- succint summary of the page -->
+    <title>O'Vitrine</title>
+</head>
+
+    <body>
+        <!-- a handy skip link for keyboard users -->
+        <!-- First Interactive element, focus = reveal, tabbing again : hide the skip link and focus next interaction -->
+        <a href="#main" style="font-size: 0.4em;">Skip to the main content</a>
+
+        <!-- Main use case -->
+        <main id="main">
+            <div class="container" style="height: 100%;">
+                <div class="row" style="height: 100%;">
+                    <div class="col-md-3" style="text-align: center;">
+
+                        <div id="headshot-container">
+                            <img src="https://picsum.photos/800" alt="Some cool logo caption!" id="headshot" />
+                        </div>
+                        <hr>
+                        <p class="aside-description">A great company one-sentence description.
+                        </p>
+                        <br />
+                        <p class="aside-description">Our mission: company' mission.</p>
+                        <hr>
+                        <ul class="contact-info">
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i
+                                        class="fab fa-twitter-square"></i> X (fka Twitter)</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i
+                                        class="fab fa-github-square"></i>GitHub</a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i
+                                        class="fab fa-linkedin"></i>LinkedIn</a>
+                            </li>
+                            <li>compamy.email [📬] domain</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <% for(project of projects) {%>
+                                <div class="col-lg-6">
+                                    <div class="card">
+                                        <img src="https://picsum.photos/800/400" class="card-img-top"
+                                            alt="<%=project.full_name%> logo">
+                                        <div class="card-body">
+                                            <h5 class="card-title" data-translate="cardtitle_<%=project.name%>">
+                                                <%=project.full_name%>
+                                            </h5>
+                                            <p class="card-text">
+                                                <%=project.description%>
+                                            </p>
+                                            <a href="/project/<%=project.project_id%>" class="btn btn-info float-right white-link"><i
+                                                    class="fab fa-readme"></i>
+                                                Read More</a>
+                                            <div class="float-left left-card">
+                                                <span class="round-label">
+                                                    <%=project.language%>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+
+        <!-- a non-blocking javascript resource [ENHANCEMENT] -->
+        <!-- no multilang for now  
+        <script src=" ./js/lang.js "></script>
+    -->
+
+    </body>
+
+    </html>

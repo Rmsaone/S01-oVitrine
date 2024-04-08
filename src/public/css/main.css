@@ -1,0 +1,292 @@
+/* 1em of the default size (16px) or the size the user has chosen in Preferences>Content (Firefox) */
+
+html {
+    font-size: calc(0.8em + 1vw);
+    /* system font with fallback in bootstrap */
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    /* Web Font with subset */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f7f9;
+}
+
+
+/* scale/resize proportionately : use the relative units em & rem (/!\ Safari with rem)  */
+
+p {
+    margin: 1.5rem 0;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 60em) {
+    html {
+        font-size: 80%;
+    }
+}
+
+
+/* target all except main (nav,header,footer,sidebard..) */
+
+@media print {
+    body>*:not(main) {
+        display: none;
+    }
+}
+
+
+/* skip link css */
+
+[href="#main"] {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    /* moves off screen */
+}
+
+[href="#main"]:focus {
+    right: auto;
+}
+
+
+/* improved link underlines */
+
+p a {
+    text-decoration: none;
+    text-shadow: 0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff;
+    background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+    background-repeat: repeat-x;
+    background-position: bottom 0.05em center;
+    /* tweak the vertical positioning */
+    background-size: 100% 0.05em;
+    /* tweak the thickness */
+}
+
+a.btn {
+    text-decoration: none;
+    /*text-shadow: 0.05em 0 0 #fff, -0.05em 0 0 #fff, 0 0.05em 0 #fff, 0 -0.05em 0 #fff, 0.1em 0 0 #fff, -0.1em 0 0 #fff, 0 0.1em 0 #fff, 0 -0.1em 0 #fff;*/
+    background-repeat: repeat-x;
+    background-position: bottom 0.05em center;
+    /* tweak the vertical positioning */
+    background-size: 100% 0.05em;
+    /* tweak the thickness */
+}
+
+a:focus.btn {
+    text-decoration: underline !important;
+}
+
+
+/* text-decoration fallback for older browsers that does not support gradient background */
+
+.ie-lte-9 a,
+.ie-lte-9 a.btn {
+    text-decoration: underline;
+}
+
+
+/* improvement : indicating focus */
+
+
+/* style used by https://www.gov.uk/ an exemplar of inclusive service design*/
+
+p a:focus {
+    outline: none;
+    background-color: #cef;
+    text-shadow: 0.05em 0 0 #cef, -0.05em 0 0 #cef, 0 0.05em 0 #cef, 0 -0.05em 0 #cef, 0.1em 0 0 #cef, -0.1em 0 0 #cef, 0 0.1em 0 #cef, 0 -0.1em 0 #cef;
+}
+
+
+/* Links with href values that start with http but do not contain the string heydonworks.com */
+
+/* replace by domain name here */
+[href^="http"]:not([href*="file:///Volumes"])::after {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-image: url('./../svg/external-link-blue.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75% auto;
+    /* alternative text rules */
+    content: '(external link)';
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 1em;
+    /* the width of the icon */
+}
+
+.white-link::after {
+    background-image: url('./../svg/external-link-white.svg') !important;
+}
+
+#main {
+    width: 100%;
+    height: fit-content;
+    /*border: 10px groove grey;*/
+    background-color: #f5f7f9;
+}
+
+.container {
+    max-width: 100% !important;
+}
+
+#headshot-container {
+    max-width: 96%;
+    margin: auto;
+    border: 2px solid rgba(0, 0, 0, .2);
+    border-radius: 0.25rem;
+    -moz-border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+@media (max-width: 767px) {
+    #headshot-container {
+        max-width: 30%;
+    }
+}
+
+#headshot {
+    max-width: 100%;
+}
+
+figcaption {
+    font-size: calc(0.3em + 0.4vw);
+    text-align: center;
+    margin-top: 0.2rem;
+    font-style: italic;
+}
+
+.first-row {
+    margin-top: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+
+/* restyle bootstrap card to fit */
+
+@media (min-width: 991px) {
+    .single-card {
+        width: 97% !important;
+    }
+}
+
+.single-card {
+    margin: auto !important;
+}
+
+.card {
+    margin: auto;
+    width: 94%;
+    margin: 3%;
+}
+
+.card-title {
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: 0.6rem;
+}
+
+.card-body>a {
+    font-size: 0.6rem;
+}
+
+.round {
+    background-color: red;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: 1px;
+    margin-top: 0.05rem;
+}
+
+.round-label {
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.multiround-container {
+    width: 12px;
+    height: 12px;
+    min-width: 12px;
+    min-height: 12px;
+    margin-top: 0.1rem;
+}
+
+.top-left,
+.top-right,
+.bottom-left,
+.bottom-right {
+    width: 50%;
+    height: 50%;
+    box-sizing: border-box;
+    float: left;
+}
+
+.top-left {
+    border-top-left-radius: 100%;
+}
+
+.top-right {
+    border-top-right-radius: 100%;
+}
+
+.bottom-left {
+    border-bottom-left-radius: 100%;
+}
+
+.bottom-right {
+    border-bottom-right-radius: 100%;
+}
+
+a.btn>i {
+    margin-right: 0.2rem;
+}
+
+.aside-description {
+    font-size: calc(0.3em + 0.5vw);
+    margin: 0;
+}
+
+hr {
+    margin: auto;
+    margin: 0.7em 1.5em;
+    background: #c4c6c9;
+}
+
+.contact-info {
+    list-style: none;
+    text-align: left;
+    padding: 0 0.5em;
+    font-size: calc(0.45em + 0.6vw);
+}
+
+.contact-info i {
+    margin: 0 0.3rem;
+}
+
+.contact-info>li:last-child {
+    margin: 0 0.3rem;
+}
+
+.left-card {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.awesome_text {
+    font-weight: 800;
+}

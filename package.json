@@ -1,0 +1,21 @@
+{
+  "name": "s01-ovitrine-jeremydfr",
+  "version": "1.0.0",
+  "description": "Challenge oVitrine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jérémy Dufroy",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.20",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  }
+}
